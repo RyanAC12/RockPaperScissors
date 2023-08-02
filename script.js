@@ -7,45 +7,25 @@ function getComputerChoice() {
     return choices[index];
 }
 
-//write a function that plays a single round
-//take player selection and computer selection as parameters
-//return a string that declares the winner of the round...
-//...like so: "You lose! Paper beats Rock"
-//Make function's playerSelecton parameter case-insensitive
+let playerScore = 0;
+let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection.toLowerCase() == "rock") {
-        if (computerSelection == "rock") {
-            return "It's a tie!";
-        }
-        else if (computerSelection == "paper") {
-            return "You lose! Paper beats rock!";
-        }
-        else if (computerSelection == "scissors") {
-            return "You win! Rock beats scissors!";
-        }
+    playerSelection = playerSelection.toLowerCase();
+    if (playerSelection === computerSelection) {
+        return "It's a tie!";
     }
-    else if (playerSelection.toLowerCase() == "paper") {
-        if (computerSelection == "rock") {
-            return "You win! Paper beats rock!";
-        }
-        else if (computerSelection == "paper") {
-            return "It's a tie!";
-        }
-        else if (computerSelection == "scissors") {
-            return "You lose! Scissors beats paper!";
-        }
+    else if (
+        (playerSelection === "rock" && computerSelection === "scissors") ||
+        (playerSelection === "paper" && computerSelection === "rock") ||
+        (playerSelection === "scissors" && computerSelection === "paper")
+    ) {
+        playerScore++;
+        return `You win! ${playerSelection} beats ${computerSelection}! The score is now ${playerScore} to ${computerScore}.`;
     }
-    else if (playerSelection.toLowerCase() == "scissors") {
-        if (computerSelection == "rock") {
-            return "You lose! Rock beats scissors!";
-        }
-        else if (computerSelection == "paper") {
-            return "You win! Scissors beats paper!";
-        }
-        else if (computerSelection == "scissors") {
-            return "It's a tie!";
-        }
+    else {
+        computerScore++;
+        return `You lose! ${computerSelection} beats ${playerSelection}! The score is now ${playerScore} to ${computerScore}.`;
     }
 }
 
