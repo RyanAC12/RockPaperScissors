@@ -22,7 +22,7 @@ function playRound(playerSelection, computerSelection) {
     ) {
         playerScore++;
         if (playerScore === 5) {
-            let finalMessage = `Game over! ${playerSelection} beats ${computerSelection}! The final score is ${playerScore} to ${computerScore}.`;
+            let finalMessage = `Game over! ${capitalizeVariable(playerSelection)} beats ${computerSelection}! The final score is ${playerScore} to ${computerScore}.`;
             resetGame();
             return finalMessage;
         }
@@ -66,4 +66,22 @@ scissors.addEventListener('click', () => {
     const computerChoice = getComputerChoice();
     results.textContent= playRound("scissors", computerChoice);
 });
+
+const btn = document.querySelectorAll('.btn');
+btn.forEach(btn => {
+btn.addEventListener('mousedown', () => {
+    btn.style.backgroundColor = 'rgb(223, 165, 91)';
+    })
+});
+
+btn.forEach(btn => {
+btn.addEventListener('mouseup', () => {
+    btn.style.backgroundColor = '';
+    })
+});
+btn.forEach(btn => {
+    btn.addEventListener('mouseleave', () => {
+        btn.style.backgroundColor = '';
+        })
+    });
 
