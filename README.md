@@ -3,9 +3,8 @@ The Odin Project
 Rock Paper Scissors Game
 
 How to play:
-Call the game() function and you will be prompted with a choice of rock, paper, or scissors
-Type your answer
-You will be met with a win, loss, or tie, as well as the score
+Click the button of your choice.
+You will be met with a win, loss, or tie, as well as the score.
 
 Features:
 Simple gameplay
