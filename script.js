@@ -11,10 +11,9 @@ let playerScore = 0;
 let computerScore = 0;
 
 function playRound(playerSelection, computerSelection) {
-    playerSelection = playerSelection.toLowerCase();
 
     if (playerSelection === computerSelection) {
-        return "It's a tie!";
+        return `It's a tie! The score is still ${playerScore} to ${computerScore}.`;
     }
     else if (
         (playerSelection === "rock" && computerSelection === "scissors") ||
@@ -23,24 +22,31 @@ function playRound(playerSelection, computerSelection) {
     ) {
         playerScore++;
         if (playerScore === 5) {
-            return `Game over! ${playerSelection} beats ${computerSelection}! The final score is ${playerScore} to ${computerScore}.`;
+            let finalMessage = `Game over! ${playerSelection} beats ${computerSelection}! The final score is ${playerScore} to ${computerScore}.`;
+            resetGame();
+            return finalMessage;
         }
-        else return `You win! ${playerSelection} beats ${computerSelection}! The score is now ${playerScore} to ${computerScore}.`;
+        else return `You win! ${capitalizeVariable(playerSelection)} beats ${computerSelection}! The score is now ${playerScore} to ${computerScore}.`;
     }
     else {
         computerScore++;
         if (computerScore === 5) {
-            return `Game over! ${computerSelection} beats ${playerSelection}! The final score is ${playerScore} to ${computerScore}.`;
+            let finalMessage = `Game over! ${capitalizeVariable(computerSelection)} beats ${playerSelection}! The final score is ${playerScore} to ${computerScore}.`;
+            resetGame();
+            return finalMessage;
         }
-        else return `You lose! ${computerSelection} beats ${playerSelection}! The score is now ${playerScore} to ${computerScore}.`;
+        else return `You lose! ${capitalizeVariable(computerSelection)} beats ${playerSelection}! The score is now ${playerScore} to ${computerScore}.`;
     }
     
 };
 
-function game() {
-    let playerSelection = prompt("Rock, paper, or scissors?");
-    const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+}
+
+function capitalizeVariable(string) {
+    return string[0].toUpperCase() + string.slice(1);
 }
 
 const results = document.querySelector('#results');

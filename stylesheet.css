@@ -1,0 +1,20 @@
+.main {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'REM';
+}
+
+.btn {
+    background-color: tan;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+#results {
+    margin: 25px;
+}
+
