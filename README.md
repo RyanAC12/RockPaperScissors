@@ -15,4 +15,3 @@ Randomized computer choice
 Code details:
 getComputerChoice(): Function that returns the computer's choice by randomly selecting between the three choices
 playRound(playerSelection, computerSelection): Function that takes in both selections and determines the winner of the round
-game(): The main function that starts the game, prompting the player for their choice
