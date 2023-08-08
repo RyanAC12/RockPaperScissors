@@ -8,15 +8,36 @@
 }
 
 .btn {
-    background-color: tan;
     width: 100px;
     height: 30px;
-    border-radius: 5px;
-    font-family: 'REM';
+    background-color: transparent;
     border: none;
 }
 
 #results {
+    height: 20px;
     margin: 25px;
+}
+
+body {
+    background-color: rgb(245, 224, 140);
+    display: flex;
+    justify-content: center;
+}
+
+#rocksymbol, #papersymbol, #scissorssymbol {
+    width: auto;
+    height: 100px;
+}
+
+#papersymbol {
+    padding-left: 15px;
+}
+
+.buttons {
+    display: flex;
+    height: 100px;
+    width: auto;
+    gap: 25px;
 }
 

@@ -70,18 +70,18 @@ scissors.addEventListener('click', () => {
 const btn = document.querySelectorAll('.btn');
 btn.forEach(btn => {
 btn.addEventListener('mousedown', () => {
-    btn.style.backgroundColor = 'rgb(223, 165, 91)';
+    btn.style.transform = 'scale(1.1)';
     })
 });
 
 btn.forEach(btn => {
 btn.addEventListener('mouseup', () => {
-    btn.style.backgroundColor = '';
+    btn.style.transform = 'scale(1)';
     })
 });
 btn.forEach(btn => {
-    btn.addEventListener('mouseleave', () => {
-        btn.style.backgroundColor = '';
-        })
-    });
+btn.addEventListener('mouseleave', () => {
+    btn.style.transform = 'scale(1)';
+    })
+});
 
