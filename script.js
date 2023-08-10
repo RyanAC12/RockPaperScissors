@@ -69,14 +69,20 @@ scissors.addEventListener('click', () => {
 
 const btn = document.querySelectorAll('.btn');
 btn.forEach(btn => {
-btn.addEventListener('mousedown', () => {
-    btn.style.transform = 'scale(1.1)';
+btn.addEventListener('mouseover', () => {
+    btn.style.transform = 'scale(1.2)';
     })
 });
 
 btn.forEach(btn => {
+    btn.addEventListener('mousedown', () => {
+        btn.style.transform = 'scale(1.1)';
+        })
+    });
+
+btn.forEach(btn => {
 btn.addEventListener('mouseup', () => {
-    btn.style.transform = 'scale(1)';
+    btn.style.transform = 'scale(1.2)';
     })
 });
 btn.forEach(btn => {
